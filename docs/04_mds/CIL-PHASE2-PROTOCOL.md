@@ -25,6 +25,7 @@ A single observation session with one child from your existing caseload.
 | **OT role** | Observe and note. Do not direct the child's interaction. Do not demonstrate the app. Do not coach. |
 | **Setting** | Wherever the child is most regulated — home, clinic, or therapy room. Your call. |
 | **Materials** | The prototype app on an iOS device (provided). This observation form (printed or digital). |
+| **Audio** | The prototype includes ambient sound and interaction audio (meadow wind, rain, stone placement, companion responses, co-regulating breathing drone). Sound is at 40% max system volume with no sudden onsets. **Device volume should be set to a comfortable level before the session begins.** The OT is evaluating the full audiovisual experience — not visual-only. If for any reason the session must be conducted without sound, note this on the observation form as it is a significant clinical variable. |
 
 ---
 
