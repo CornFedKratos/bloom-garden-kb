@@ -154,6 +154,109 @@ p,li{font-size:clamp(13px,1.2vw,15px);line-height:1.7;color:var(--soil);font-wei
 .tier-cell{padding:10px 12px;border-right:1px solid var(--border);border-top:1px solid var(--border);color:var(--soil);font-weight:300}
 .tier-cell:last-child{border-right:none}
 .tier-cell.highlight{background:rgba(74,124,89,.05);color:var(--moss);font-weight:500}
+
+/* =============================================
+   TV / LARGE DISPLAY OPTIMIZATIONS
+   Kicks in at 1600px+ (70" TV @ 1080p/4K)
+   Goal: bigger type, more breathing room,
+   wider content area, readable from the couch
+============================================= */
+@media (min-width:1600px){
+
+  /* Nav — taller, bigger text */
+  .top-nav{padding:14px 48px}
+  .nav-leaf{width:40px;height:40px;font-size:20px}
+  .nav-title{font-size:24px}
+  .nav-links a{font-size:17px}
+  .nav-tag{font-size:13px;padding:5px 14px}
+
+  /* Slide container — breathe out */
+  .deck{padding-top:72px}
+  .slide{padding:48px 100px 96px;top:72px}
+  .slide-inner{max-width:1500px}
+
+  /* Bottom nav — big enough to see from the couch */
+  .slide-nav{padding:12px 28px;border-radius:50px;gap:20px;bottom:24px}
+  .slide-nav button{font-size:26px;padding:6px 14px}
+  .slide-nav .counter{font-size:16px;min-width:72px}
+
+  /* Progress bar — thicker */
+  .progress{height:5px;top:72px}
+
+  /* Typography — scale up substantially */
+  h1{font-size:clamp(52px,5.5vw,88px)}
+  h2{font-size:clamp(38px,3.8vw,62px);margin-bottom:24px}
+  h3{font-size:clamp(18px,1.6vw,24px);margin-bottom:10px}
+  p,li{font-size:clamp(16px,1.3vw,20px);line-height:1.75}
+  .lead{font-size:clamp(20px,1.8vw,26px);max-width:900px}
+
+  /* Tags — readable pill labels */
+  .tag{font-size:13px;padding:6px 18px;margin-bottom:20px}
+
+  /* Cards — more padding, rounder */
+  .card{padding:28px 32px;border-radius:20px}
+  .card-moss{border-left-width:4px}
+  .card-bloom{border-left-width:4px}
+  .card-firefly{border-left-width:4px}
+  .card-soil{border-left-width:4px}
+
+  /* Grids — more gap */
+  .grid2{gap:28px;margin-top:28px}
+  .grid3{gap:24px;margin-top:28px}
+  .grid4{gap:22px;margin-top:28px}
+
+  /* Stats */
+  .stat-big{font-size:clamp(56px,6vw,100px)}
+
+  /* Quote */
+  .quote{font-size:clamp(22px,2vw,30px);padding:20px 28px}
+
+  /* Table */
+  .bg-table{font-size:17px}
+  .bg-table th{font-size:13px;padding:14px 18px}
+  .bg-table td{padding:14px 18px}
+
+  /* Callout */
+  .callout{padding:24px 30px;border-radius:20px}
+  .callout-label{font-size:13px;margin-bottom:10px}
+  .callout p{font-size:17px;line-height:1.7}
+
+  /* Companion cards */
+  .companion-card{padding:24px;border-radius:24px}
+  .companion-emoji{font-size:48px;margin-bottom:12px}
+  .companion-name{font-size:24px}
+  .companion-role{font-size:13px}
+  .companion-card p{font-size:15px;margin-top:8px}
+
+  /* Step rows */
+  .step-row{padding:14px 0}
+  .step-num{width:42px;height:42px;font-size:16px}
+
+  /* Tier table */
+  .tier-row{font-size:16px}
+  .tier-header{font-size:13px;padding:12px 16px}
+  .tier-cell{padding:14px 16px}
+
+  /* Close links */
+  .close-link{font-size:16px;padding:10px 22px;border-radius:14px}
+
+  /* Spacing helpers — scale up */
+  .mt-16{margin-top:22px}
+  .mt-20{margin-top:28px}
+  .mt-24{margin-top:32px}
+  .mt-32{margin-top:44px}
+}
+
+/* 4K TVs — push a bit further */
+@media (min-width:2400px){
+  .slide-inner{max-width:2000px}
+  h1{font-size:clamp(72px,5vw,110px)}
+  h2{font-size:clamp(52px,3.5vw,80px)}
+  h3{font-size:clamp(22px,1.5vw,30px)}
+  p,li{font-size:clamp(20px,1.2vw,26px)}
+  .lead{font-size:clamp(24px,1.6vw,34px)}
+  .callout p{font-size:22px}
+}
 </style>
 </head>
 <body>
