@@ -96,17 +96,17 @@ Fill out this template completely. No placeholder fields. No "TBD."
 ## Step 3 — Append to Session Context File
 
 Append the completed export block to:
-`docs/session_context/BLO_SESSION_CONTEXT_LATEST.md`
+`docs/05_session_context/BLO_SESSION_CONTEXT_LATEST.md`
 
 This file is append-only. Do not overwrite previous session blocks.
 The latest block is authoritative state. All previous blocks are institutional history.
 
 ```bash
 # Verify the file exists
-ls docs/session_context/BLO_SESSION_CONTEXT_LATEST.md
+ls docs/05_session_context/BLO_SESSION_CONTEXT_LATEST.md
 
 # Append (do not overwrite)
-cat >> docs/session_context/BLO_SESSION_CONTEXT_LATEST.md << 'EOF'
+cat >> docs/05_session_context/BLO_SESSION_CONTEXT_LATEST.md << 'EOF'
 [paste completed export block here]
 EOF
 ```
@@ -150,7 +150,7 @@ If Edge Function is unreachable: note it in the session export. The file-based e
 ## Step 5 — Commit the Context Export
 
 ```bash
-git add docs/session_context/BLO_SESSION_CONTEXT_LATEST.md
+git add docs/05_session_context/BLO_SESSION_CONTEXT_LATEST.md
 git commit -m "chore(session): export context [BLO-XXX] [agent-name]"
 git push origin [branch]
 ```

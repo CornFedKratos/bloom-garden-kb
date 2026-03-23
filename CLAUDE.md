@@ -20,8 +20,8 @@ Every session begins with: `Good Morning [Agent Name], /session-open`
 | "Clyde" | `.claude/skills/agent-clyde/SKILL.md` |
 | "Claud3" | `.claude/skills/agent-claud3/SKILL.md` |
 
-Session context file: `docs/session_context/BLO_SESSION_CONTEXT_LATEST.md`
-Prompt location: `docs/prompts/`
+Session context file: `docs/05_session_context/BLO_SESSION_CONTEXT_LATEST.md`
+Prompt location: `docs/06_prompts/`
 Branch pattern: `feat/blo-XXX-short-description`
 
 **No agent begins work before session-open completes.**
@@ -45,8 +45,8 @@ Netlify site ID:        e1252695-6cca-4834-a20f-c65aeb4c3af0
 Linear space:           https://linear.app/chickentindy/team/BLO/all
 Linear prefix:          BLO-XXX
 Flutter project root:   ~/bloom-garden/app/
-Session context:        docs/session_context/BLO_SESSION_CONTEXT_LATEST.md
-Prompt location:        docs/prompts/
+Session context:        docs/05_session_context/BLO_SESSION_CONTEXT_LATEST.md
+Prompt location:        docs/06_prompts/
 ```
 
 ---
@@ -196,7 +196,7 @@ Export must include:
 - Unexpected findings
 - KB section_id created or updated
 
-No session ends without context export committed to: `docs/session_context/BLO_SESSION_CONTEXT_LATEST.md`
+No session ends without context export committed to: `docs/05_session_context/BLO_SESSION_CONTEXT_LATEST.md`
 Context exports are append-only. Previous sessions are institutional history. Latest block is authoritative state.
 
 **Approval authority:** Don per sprint.
@@ -237,7 +237,7 @@ Human governs.
 ### Rules
 - Human is the final approval gate on every PR.
 - No merge without human review.
-- Every execution prompt is a versioned file committed to `docs/prompts/`.
+- Every execution prompt is a versioned file committed to `docs/06_prompts/`.
 - A prompt that is not in the repo did not happen.
 - File ownership boundaries are explicit — agents do not touch files outside their scope.
 - Parallel tracks are isolated — Track A (Codey) and Track B (Codey Jr) never share files.
@@ -264,7 +264,7 @@ This catches hallucinated scope, misunderstood requirements, and file boundary v
 ### The 5-Step Execution Gate
 ```
 Step 1 — Read the ticket
-Step 2 — Review the prompt (from docs/prompts/)
+Step 2 — Review the prompt (from docs/06_prompts/)
 Step 3 — Annotate findings on Linear — HARD STOP, wait for approval
 Step 4 — Implement per approved plan
 Step 5 — Verify (analyze + tests >= baseline) and ship
@@ -367,7 +367,7 @@ These are not targets. They are gates.
 - `docs/01_specs/RISKS.md` — Living risk register, updated every stage
 - `docs/02_product-decisions/` — Decision log, all ADRs documented here
 - `docs/01_specs/AUDIT.md` — Scope boundary and artifact completeness
-- `docs/session_context/BLO_SESSION_CONTEXT_LATEST.md` — Authoritative current state
+- `docs/05_session_context/BLO_SESSION_CONTEXT_LATEST.md` — Authoritative current state
 
 ### Rules
 - No sprint ends without context artifact update.
@@ -440,11 +440,11 @@ Agent must confirm ingestion of:
 - [ ] `docs/01_specs/PRD.md`
 - [ ] `docs/01_specs/RISKS.md`
 - [ ] `docs/02_product-decisions/` (latest decision log)
-- [ ] `docs/session_context/BLO_SESSION_CONTEXT_LATEST.md`
+- [ ] `docs/05_session_context/BLO_SESSION_CONTEXT_LATEST.md`
 
 ### Prompt Standards
 - No vague prompts. No ambiguous directives.
-- Every prompt is a versioned file in `docs/prompts/`.
+- Every prompt is a versioned file in `docs/06_prompts/`.
 - A prompt not in the repo did not happen.
 - Model cannot begin implementation without: clear files listed, clear acceptance criteria, clear DoD.
 - Model must restate understanding before execution (annotation step).
@@ -473,7 +473,7 @@ Every execution prompt must include:
 Prompt delivery pattern:
 - Claud3 (CPO) authors the prompt file
 - Don reviews and approves
-- Don commits to `docs/prompts/`
+- Don commits to `docs/06_prompts/`
 - Execution agent reads from repo path and executes
 
 ---
@@ -559,7 +559,7 @@ Prompt delivery pattern:
 - Track A (Codey): `lib/screens/`, `lib/services/`, `lib/models/`, `supabase/migrations/`
 - Track B (Codey Jr): Non-overlapping feature modules, explicitly listed per ticket
 - Design (Carl): `design/`, `docs/design_system/`, asset files
-- Prompts/Specs (Claud3): `docs/prompts/`, `docs/01_specs/`, `docs/02_product-decisions/`, `docs/03_briefs/`
+- Prompts/Specs (Claud3): `docs/06_prompts/`, `docs/01_specs/`, `docs/02_product-decisions/`, `docs/03_briefs/`
 - Tests (Clyde): `test/`, `integration_test/`
 
 Tracks A and B never share files in the same sprint. Merge conflicts by design are impossible.

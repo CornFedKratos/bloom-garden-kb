@@ -32,10 +32,10 @@ Read the agent skill file. Internalize identity, hard rules, communication style
 ## Step 1 — Load Session Context
 
 Read the latest session context file:
-`docs/session_context/BLO_SESSION_CONTEXT_LATEST.md`
+`docs/05_session_context/BLO_SESSION_CONTEXT_LATEST.md`
 
 If the file does not exist, fall back to:
-`docs/session_context/SESSION-CONTEXT-2026-03-23.md`
+`docs/05_session_context/SESSION-CONTEXT-2026-03-23.md`
 
 Then attempt to pull additional context from Supabase session memory:
 
