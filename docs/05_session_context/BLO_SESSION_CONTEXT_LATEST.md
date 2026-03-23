@@ -200,3 +200,113 @@ Supabase project ID: `pobqntuhqbvjrqftwsaj` — Codey has direct MCP access.
 
 **⚠️ Security note:** Recraft API key was exposed in conversation 2026-03-23. Key must be regenerated at recraft.ai before use. Store as env var RECRAFT_API_KEY — never commit to repo.
 ---
+
+---
+
+## Session Export — 2026-03-23 — Codey (CTO) + Carl (Sr UI/UX) + Clyde (QA)
+
+**Session:** 4 — Phase 2 Prototype Build + Asset Production
+**Orchestrator:** Don
+**Status:** Phase 2 prototype built, all assets produced, integration pending (BLO-17)
+
+### Pre-Flight State
+- KB repo: clean on main
+- App repo: did not exist at session start
+- BAA status: pending
+
+### Tickets Completed This Session
+
+| Ticket | Title | Repo | Agent |
+|---|---|---|---|
+| BLO-1 | KB Vector Ingestion Pipeline | bloom-garden-kb | Codey |
+| BLO-2 | KB Navigation Pages | bloom-garden-kb | Codey |
+| BLO-3 | Linear Project Structure | Linear config | Codey |
+| BLO-4 | OT Recruitment Docs | bloom-garden-kb | Codey (review) |
+| BLO-10 | Phase 2 Design Specs (6 docs) | bloom-garden-kb | Carl |
+| BLO-11 | Flutter App Scaffold | bloom-garden-app | Codey |
+| BLO-13 | Sound Assets (17 files) | bloom-garden-app | Carl |
+| BLO-15 | TDD Foundation | bloom-garden-app | Clyde |
+| BLO-16 | Lottie Moss (3 states) | bloom-garden-app | Carl |
+| BLO-18 | Recraft Visual Assets (24 SVGs) | bloom-garden-app | Carl |
+| BLO-12 | Phase 2 Prototype Build | bloom-garden-app | Codey |
+
+### Tickets Created This Session
+| Ticket | Title | Status |
+|---|---|---|
+| BLO-5 | RISK-001: Name trademark | Backlog |
+| BLO-6 | RISK-002: Supabase BAA | Backlog |
+| BLO-7 | RISK-003: OT pilot recruitment | Backlog |
+| BLO-8 | OQ-005: HIPAA BA/CE status | Backlog |
+| BLO-13 | Sound Asset Production | Done |
+
+### Ticket Pending — Next Session
+| Ticket | Title | Status |
+|---|---|---|
+| BLO-17 | Full Asset Integration (Lottie + Audio + SVG) | Ready — annotate and execute |
+
+### Architecture Decisions Made
+1. **Physics:** Manual AnimationController for Stone Stacker (no flame dependency)
+2. **Navigation:** Navigator.push/pop with PageRouteBuilder 1500ms cross-fade
+3. **Moss rendering:** CustomPainter fallback built, Lottie assets produced via Recraft AI
+4. **Sound in prototype:** Confirmed in-scope. ElevenLabs AI for all 17 assets.
+5. **Visual asset pipeline:** Recraft AI Pro ($20/mo) for all illustrated SVGs
+6. **Sound placeholders:** Silent in BLO-12, real audio in BLO-13, wired in BLO-17
+
+### Asset Inventory — All on main in bloom-garden-app
+
+**Lottie (assets/animations/):**
+- moss_resting.json — 70KB, 10s loop, 60fps
+- moss_calm_active.json — 122KB, 8s loop, 60fps
+- moss_co_regulating.json — 133KB, 11s loop (4s/1s/6s), 60fps
+- Source SVGs in assets/animations/source/
+
+**Audio (assets/audio/) — 17 files, 836KB total:**
+- Ambient: meadow_ambient, rain_painter_ambient, stone_stacker_ambient, co_regulating_drone
+- Moss: moss_tap_resting, moss_tap_calm_active, moss_tap_co_regulating
+- Elements: tap_default, glowing_seed_tap, flower_tap, grass_tap, cloud_tap
+- Mini-games: rain_stroke, stone_pick, stone_place, stone_fall
+- Weather: weather_chime
+
+**SVG (assets/images/) — 24 files + 4 app icon concepts:**
+- Meadow: meadow_bg, glowing_seed, flower_cluster, grass_zone, ground_path, cloud_1/2/3
+- Rain Painter: rain_sky_bg, rainbow, puddle_sm/md/lg
+- Stone Stacker: river_bg, shore, stone_1/2/3/4/5
+- Weather: weather_sunny, weather_cloudy, weather_rainy, weather_stormy
+- App icons: concept_1_moss_garden, concept_2_seed_leaf, concept_3_moss_face, concept_4_bloom
+
+### Test Count Delta
+- App repo baseline at open: 0 (repo didn't exist)
+- App repo final at close: 56 tests, 0 failures
+- KB repo: build green
+
+### Repos
+- **bloom-garden-kb:** github.com/CornFedKratos/bloom-garden-kb (public)
+- **bloom-garden-app:** github.com/CornFedKratos/bloom-garden-app (private)
+
+### API Keys — MUST ROTATE
+- **GitHub PAT:** exposed in conversation — REGENERATE
+- **Recraft API key:** exposed in conversation — REGENERATE
+- **ElevenLabs API key:** exposed in conversation — REGENERATE
+- Recraft credits remaining: ~1,640 (started at ~5,000)
+
+### Linear State
+- Project "Bloom Garden" created with 5 milestones
+- 8 surface labels + existing labels
+- 4 risk tickets (BLO-5 through BLO-8)
+- Workflow automation configured
+
+### Open Blockers
+- BLOCKER: API keys exposed in conversation — Don must regenerate all 3 before next session
+- BLOCKER: After regeneration, update remote URLs for both repos
+
+### Don Review Items
+- App icon: concepts 1 (Moss in Garden) and 3 (Moss Close-up) recommended for OT review
+- Visual asset issues flagged by Don (palette, trees, faces) — fixed but some SVGs may need emulator-level iteration
+- 1,640 Recraft credits available for targeted regeneration
+
+### Next Session Should Start With
+- **BLO-17 — Full Asset Integration** — Codey annotates and executes
+- Three tasks: Lottie swap, AudioService + 17 sounds, SVG replacement for all screens
+- 7 break points defined in prompt
+- After BLO-17 merges: Don reviews on iOS simulator for the first time
+- Rotate all 3 API keys before starting
