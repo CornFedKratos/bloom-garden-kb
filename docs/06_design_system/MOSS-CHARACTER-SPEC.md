@@ -16,6 +16,8 @@ Moss has exactly **three states**. No fourth state exists.
 
 ## Rendering Approach
 
+> **Updated 2026-03-23:** Moss animations are produced via the Recraft AI visual pipeline (see `docs/02_product-decisions/RECRAFT-VISUAL-PIPELINE.md`). The pipeline is: Recraft AI Pro API → SVG → svg-to-lottie conversion → hand-authored keyframe animation. CustomPainter remains as fallback. The Lottie tooling options listed below are superseded by this decision.
+
 **Moss is a Lottie animation asset** with Flutter widget overlays for glow and particles.
 
 | Layer | Technology | Rationale |

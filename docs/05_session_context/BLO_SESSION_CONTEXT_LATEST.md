@@ -180,3 +180,23 @@ On the Next.js KB site (`bloom-garden-kb.netlify.app`):
 Load this document at session open. The KB at `bloom-garden-kb.netlify.app` is the living reference.
 MISSION.md governs every decision. CIL governs every clinical claim.
 Supabase project ID: `pobqntuhqbvjrqftwsaj` — Codey has direct MCP access.
+
+---
+## Decision Log — 2026-03-23 — Recraft Visual Pipeline
+
+**Decision:** All Phase 2 prototype visual assets will be produced via Recraft AI Pro instead of CustomPainter geometric primitives.
+
+**Trigger:** During BLO-16 (Carl — Lottie Moss production), Carl determined that hand-authored Lottie JSON of geometric primitives cannot produce the emotional warmth required for OT observation. Recraft AI Pro generates true illustrated SVG characters. Don approved the $20/month cost.
+
+**Assets affected:** Moss (3 states), meadow environment, Rain Painter, Stone Stacker, Weather Report icons.
+
+**Pipeline:** Recraft API → SVG → svg-to-lottie (for Lottie assets) → keyframe animation → Flutter integration.
+
+**Tickets created:** BLO-16 (Moss Lottie, updated), BLO-18 (visual asset sweep, new).
+
+**ADR:** `docs/02_product-decisions/RECRAFT-VISUAL-PIPELINE.md`
+
+**What does NOT change:** COLOR-TOKENS.md, INTERACTION-PATTERNS.md, SENSORY-SAFETY-AUDIT.md, Flutter code architecture.
+
+**⚠️ Security note:** Recraft API key was exposed in conversation 2026-03-23. Key must be regenerated at recraft.ai before use. Store as env var RECRAFT_API_KEY — never commit to repo.
+---

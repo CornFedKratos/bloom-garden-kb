@@ -6,6 +6,8 @@
 
 ---
 
+> **Updated 2026-03-23:** All Rain Painter and Stone Stacker visual assets (sky, puddles, rainbow, stones, water, shore) are produced via the Recraft AI visual pipeline (see `docs/02_product-decisions/RECRAFT-VISUAL-PIPELINE.md`). The visual descriptions and physics specs in this document remain authoritative — Recraft prompts are derived from this spec.
+
 ## Shared Mini-Game Principles
 
 - No score. No timer. No failure state. No "game over."

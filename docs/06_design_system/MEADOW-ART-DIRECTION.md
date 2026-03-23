@@ -40,6 +40,8 @@ Safe. Curious. Quiet. Alive. A place you want to explore, not a place that deman
 
 ## Environment Elements — Complete Inventory
 
+> **Updated 2026-03-23:** All meadow environment assets (background, flowers, grass, clouds, path, glowing seed) are produced via the Recraft AI visual pipeline (see `docs/02_product-decisions/RECRAFT-VISUAL-PIPELINE.md`). The color palette and element descriptions in this document remain authoritative — Recraft prompts are derived from this spec. CustomPainter geometry described below has been superseded for production assets.
+
 Every element below is tappable. Every element has a defined response. Nothing in the meadow is inert.
 
 ---
