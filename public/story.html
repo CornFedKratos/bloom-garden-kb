@@ -36,7 +36,7 @@ body{font-family:'DM Sans',-apple-system,sans-serif;background:var(--dawn);color
 
 /* === SLIDE DECK === */
 .deck{position:relative;width:100%;height:100vh;padding-top:56px}
-.slide{position:absolute;inset:0;top:56px;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:36px 64px 72px;opacity:0;pointer-events:none;transition:opacity .5s ease;overflow-y:auto}
+.slide{position:absolute;inset:0;top:56px;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:36px 64px 90px;opacity:0;pointer-events:none;transition:opacity .5s ease;overflow-y:auto}
 .slide.active{opacity:1;pointer-events:auto}
 .slide-inner{max-width:1100px;width:100%}
 
@@ -157,105 +157,106 @@ p,li{font-size:clamp(13px,1.2vw,15px);line-height:1.7;color:var(--soil);font-wei
 
 /* =============================================
    TV / LARGE DISPLAY OPTIMIZATIONS
-   Kicks in at 1600px+ (70" TV @ 1080p/4K)
-   Goal: bigger type, more breathing room,
-   wider content area, readable from the couch
+   Calibrated for 70" 1080p @ ~8ft viewing
+   Key constraint: ALL content must fit within
+   one viewport height — no vertical clipping.
+   Type is larger but content density is same.
 ============================================= */
 @media (min-width:1600px){
 
-  /* Nav — taller, bigger text */
-  .top-nav{padding:14px 48px}
-  .nav-leaf{width:40px;height:40px;font-size:20px}
-  .nav-title{font-size:24px}
-  .nav-links a{font-size:17px}
-  .nav-tag{font-size:13px;padding:5px 14px}
+  /* Nav — slightly taller, bigger text */
+  .top-nav{padding:12px 48px}
+  .nav-leaf{width:38px;height:38px;font-size:18px}
+  .nav-title{font-size:22px}
+  .nav-links a{font-size:16px}
+  .nav-tag{font-size:12px;padding:4px 13px}
 
-  /* Slide container — breathe out */
-  .deck{padding-top:72px}
-  .slide{padding:48px 100px 96px;top:72px}
-  .slide-inner{max-width:1500px}
+  /* Slide — wider content area, generous side margins
+     Bottom padding clears: nav ~48px + 24px gap + 32px buffer = 104px */
+  .deck{padding-top:66px}
+  .slide{padding:32px 120px 110px;top:66px}
+  .slide-inner{max-width:1440px}
 
-  /* Bottom nav — big enough to see from the couch */
-  .slide-nav{padding:12px 28px;border-radius:50px;gap:20px;bottom:24px}
-  .slide-nav button{font-size:26px;padding:6px 14px}
-  .slide-nav .counter{font-size:16px;min-width:72px}
+  /* Bottom nav */
+  .slide-nav{padding:10px 24px;border-radius:48px;gap:18px;bottom:22px}
+  .slide-nav button{font-size:24px;padding:5px 12px}
+  .slide-nav .counter{font-size:15px;min-width:68px}
 
-  /* Progress bar — thicker */
-  .progress{height:5px;top:72px}
+  /* Progress bar */
+  .progress{height:4px;top:66px}
 
-  /* Typography — scale up substantially */
-  h1{font-size:clamp(52px,5.5vw,88px)}
-  h2{font-size:clamp(38px,3.8vw,62px);margin-bottom:24px}
-  h3{font-size:clamp(18px,1.6vw,24px);margin-bottom:10px}
-  p,li{font-size:clamp(16px,1.3vw,20px);line-height:1.75}
-  .lead{font-size:clamp(20px,1.8vw,26px);max-width:900px}
+  /* Typography — readable from couch without overflowing
+     Using vw-based values so they scale with the actual screen */
+  h1{font-size:clamp(44px,4.2vw,72px);line-height:1.06}
+  h2{font-size:clamp(30px,2.8vw,48px);line-height:1.15;margin-bottom:18px}
+  h3{font-size:clamp(15px,1.2vw,20px);margin-bottom:8px}
+  p,li{font-size:clamp(14px,1.05vw,17px);line-height:1.7}
+  .lead{font-size:clamp(17px,1.4vw,22px);max-width:860px}
 
-  /* Tags — readable pill labels */
-  .tag{font-size:13px;padding:6px 18px;margin-bottom:20px}
+  /* Tags */
+  .tag{font-size:12px;padding:5px 16px;margin-bottom:16px}
 
-  /* Cards — more padding, rounder */
-  .card{padding:28px 32px;border-radius:20px}
-  .card-moss{border-left-width:4px}
-  .card-bloom{border-left-width:4px}
-  .card-firefly{border-left-width:4px}
-  .card-soil{border-left-width:4px}
+  /* Cards — slightly more padding */
+  .card{padding:22px 26px;border-radius:18px}
+  .card-moss,.card-bloom,.card-firefly,.card-soil{border-left-width:4px}
 
-  /* Grids — more gap */
-  .grid2{gap:28px;margin-top:28px}
-  .grid3{gap:24px;margin-top:28px}
-  .grid4{gap:22px;margin-top:28px}
+  /* Grids — moderate gap increase */
+  .grid2{gap:22px;margin-top:20px}
+  .grid3{gap:18px;margin-top:20px}
+  .grid4{gap:16px;margin-top:20px}
 
   /* Stats */
-  .stat-big{font-size:clamp(56px,6vw,100px)}
+  .stat-big{font-size:clamp(44px,4.5vw,76px)}
 
   /* Quote */
-  .quote{font-size:clamp(22px,2vw,30px);padding:20px 28px}
+  .quote{font-size:clamp(18px,1.5vw,24px);padding:16px 22px}
 
   /* Table */
-  .bg-table{font-size:17px}
-  .bg-table th{font-size:13px;padding:14px 18px}
-  .bg-table td{padding:14px 18px}
+  .bg-table{font-size:15px}
+  .bg-table th{font-size:12px;padding:11px 16px}
+  .bg-table td{padding:11px 16px}
 
   /* Callout */
-  .callout{padding:24px 30px;border-radius:20px}
-  .callout-label{font-size:13px;margin-bottom:10px}
-  .callout p{font-size:17px;line-height:1.7}
+  .callout{padding:18px 24px;border-radius:18px}
+  .callout-label{font-size:12px;margin-bottom:8px}
+  .callout p{font-size:15px;line-height:1.65}
 
   /* Companion cards */
-  .companion-card{padding:24px;border-radius:24px}
-  .companion-emoji{font-size:48px;margin-bottom:12px}
-  .companion-name{font-size:24px}
-  .companion-role{font-size:13px}
-  .companion-card p{font-size:15px;margin-top:8px}
+  .companion-card{padding:20px;border-radius:22px}
+  .companion-emoji{font-size:40px;margin-bottom:10px}
+  .companion-name{font-size:20px}
+  .companion-role{font-size:11px}
+  .companion-card p{font-size:13px;margin-top:6px}
 
   /* Step rows */
-  .step-row{padding:14px 0}
-  .step-num{width:42px;height:42px;font-size:16px}
+  .step-row{padding:12px 0}
+  .step-num{width:38px;height:38px;font-size:15px}
 
   /* Tier table */
-  .tier-row{font-size:16px}
-  .tier-header{font-size:13px;padding:12px 16px}
-  .tier-cell{padding:14px 16px}
+  .tier-row{font-size:15px}
+  .tier-header{font-size:12px;padding:10px 14px}
+  .tier-cell{padding:12px 14px}
 
   /* Close links */
-  .close-link{font-size:16px;padding:10px 22px;border-radius:14px}
+  .close-link{font-size:15px;padding:9px 20px;border-radius:12px}
 
-  /* Spacing helpers — scale up */
-  .mt-16{margin-top:22px}
-  .mt-20{margin-top:28px}
-  .mt-24{margin-top:32px}
-  .mt-32{margin-top:44px}
+  /* Firefly dots */
+  .firefly-dot{width:10px;height:10px}
 }
 
-/* 4K TVs — push a bit further */
+/* 4K TVs (e.g. 65"+ 4K panel at close range) */
 @media (min-width:2400px){
-  .slide-inner{max-width:2000px}
-  h1{font-size:clamp(72px,5vw,110px)}
-  h2{font-size:clamp(52px,3.5vw,80px)}
-  h3{font-size:clamp(22px,1.5vw,30px)}
-  p,li{font-size:clamp(20px,1.2vw,26px)}
-  .lead{font-size:clamp(24px,1.6vw,34px)}
-  .callout p{font-size:22px}
+  .slide-inner{max-width:1900px}
+  .slide{padding:36px 160px 120px}
+  h1{font-size:clamp(56px,3.8vw,90px)}
+  h2{font-size:clamp(38px,2.6vw,60px)}
+  h3{font-size:clamp(18px,1.1vw,24px)}
+  p,li{font-size:clamp(16px,0.95vw,20px)}
+  .lead{font-size:clamp(20px,1.3vw,28px)}
+  .callout p{font-size:18px}
+  .bg-table{font-size:17px}
+  .bg-table th{font-size:13px;padding:13px 18px}
+  .bg-table td{padding:13px 18px}
 }
 </style>
 </head>
