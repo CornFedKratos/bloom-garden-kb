@@ -205,6 +205,51 @@ p,li{font-size:clamp(13px,1.2vw,15px);line-height:1.7;color:var(--soil);font-wei
   .grid3{gap:18px;margin-top:20px}
   .grid4{gap:16px;margin-top:20px}
 
+  /* Dense slide fix — reduce vertical stacking on slides
+     with many cards. Key reductions:
+     - card padding smaller so 3-card columns fit
+     - mt-12/mt-16 inline overrides need matching
+     - step-row padding tighter for roadmap slide */
+  .card{padding:16px 20px;border-radius:18px}
+  .card-moss,.card-bloom,.card-firefly,.card-soil{border-left-width:4px}
+
+  /* Callout — less vertical weight */
+  .callout{padding:14px 20px;border-radius:16px;margin-top:14px}
+  .callout-label{font-size:11px;margin-bottom:6px}
+  .callout p{font-size:14px;line-height:1.6}
+
+  /* Step rows — tighter for roadmap */
+  .step-row{padding:10px 0}
+  .step-num{width:36px;height:36px;font-size:14px}
+
+  /* Dense slides — ensure they scroll on TV rather than clip.
+     flex-start means content starts at top, scrolls down if needed,
+     rather than centering and overflowing top AND bottom */
+  .slide{justify-content:flex-start;padding-top:36px}
+
+  /* Reduce inline gap on companion/team 6-column grids */
+  .slide-inner [style*="repeat(6,1fr)"]{gap:10px !important;margin-top:18px !important}
+
+  /* Reduce inline margin-top on grids inside slides */
+  .slide-inner .grid2[style*="margin-top:16px"]{margin-top:12px}
+  .slide-inner .grid2[style*="margin-top:20px"]{margin-top:14px}
+  .slide-inner .grid3[style*="margin-top:20px"]{margin-top:14px}
+
+  /* Tighten inline card gap on flex columns */
+  .slide-inner [style*="gap:12px"]{gap:10px !important}
+  .slide-inner [style*="gap:14px"]{gap:10px !important}
+  .slide-inner [style*="gap:16px"]{gap:12px !important}
+
+  /* Reduce inline card padding overrides */
+  .slide-inner .card[style*="padding:20px"]{padding:14px 18px !important}
+  .slide-inner .card[style*="padding:18px"]{padding:12px 16px !important}
+
+  /* Tag margin — less space above h2 */
+  .tag{margin-bottom:10px}
+
+  /* Lead — tighter bottom margin */
+  .lead{margin-bottom:0}
+
   /* Stats */
   .stat-big{font-size:clamp(44px,4.5vw,76px)}
 
